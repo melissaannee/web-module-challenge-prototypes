@@ -15,10 +15,10 @@
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person(name, age, stomach = []) {
+function Person(name, age) {
   this.name = name;
   this.age = age;
-  this.stomach = stomach;
+  this.stomach = [];
 }
 
 Person.prototype.eat = function(someFood) {
@@ -57,10 +57,16 @@ console.log(melissa.toString())
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car(models, milesPerGallon) {
-
+function Car(model, milesPerGallon) {
+  this.model = model
+  this.milesPerGallon = milesPerGallon
+  this.tank = 0
+  this.odometer = 0
 }
 
+Car.prototype.fill = function(gallons) {
+  this.tank += gallons
+}
 
 /*
   TASK 3
