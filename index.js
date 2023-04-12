@@ -60,8 +60,8 @@ console.log(melissa.toString())
 function Car(model, milesPerGallon) {
   this.model = model
   this.milesPerGallon = milesPerGallon
-  this.tank = 0
-  this.odometer = 0
+  this.tank = 0;
+  this.odometer = 0;
 }
 
 Car.prototype.fill = function(gallons) {
@@ -77,17 +77,24 @@ Car.prototype.fill = function(gallons) {
 */
 
 function Baby(name, age, favoriteToy) {
-
+  this.name = name
+  this.age = age
+  this.favoriteToy = favoriteToy
 }
 
+Baby.prototype = Object.create(Person.prototype);
+
+Baby.prototype.play = function() {
+  return `Playing with ${this.favoriteToy}`
+}
 
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Principal 1: Window/Global Object Binding. This is when "this" is used in the global scope and the value of "this" will be the window object in a browser.
+  2. Principle 2: Implicit Binding. This is when "this" is proceded by a dot and then an object which will call a function.
+  3. Principle 3: New Binding. This is when "this" is referencing a constructor function which can be used to create new objects.
+  4. Principle 4: Explicit Binding. This is when you an use the call() method or apply() method to set the value of "this" to a specific variable.
 */
 
 ///////// END OF CHALLENGE /////////
